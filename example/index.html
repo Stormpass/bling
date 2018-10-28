@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>example - bling.js</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="lib/bling.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h2>Bling.js 周期性动画工具</h2>
+    <div style="margin-bottom:20px;"><a target="_target" href="https://github.com/Stormpass/bling">Github</a></div>
+    <!--红心-->
+    <div class="container">
+      <div>
+        <img src="images/heart.png" id="heart" class="heart" />
+      </div>
+      <button onclick="Bling({el:$elements.heart,loop:true})">开始闪烁</button>
+      <button onclick="Bling.stopLoop($elements.heart)">停止闪烁</button>
+      <button onclick="Bling({el:$elements.heart})">闪一次</button>
+    </div>
+    <!-- 滑块 -->
+    <div class="container">
+      <div>
+        <div class="slide-box">
+          <span id="slide-block" class="slide-block"></span>
+        </div>
+      </div>
+      halfCycle:<input id="halfCycle" type="number" value="1000">ms
+      <button onclick="Bling({
+            el:$elements.slideBlock,
+            halfCycle: document.getElementById('halfCycle').value,
+            edgeClass:'edge-right',
+            loop:true
+          })">
+        开始滑动
+      </button>
+      <button onclick="Bling.stopLoop($elements.slideBlock)">停止滑动</button>
+      <button onclick="Bling({
+            el:$elements.slideBlock,
+            halfCycle: document.getElementById('halfCycle').value,
+            edgeClass:'edge-right',
+          })">
+        滑动一次
+      </button>
+    </div>
+    <!-- 跳跃 -->
+    <div class="container">
+      <div>
+        <div class="jump-box">
+          <span id="jump-block" class="jump-block"></span>
+        </div>
+      </div>
+      halfCycle:<input id="halfCycle1" type="number" value="1000">ms
+      <button onclick="Bling({
+              el:$elements.jumpBlock,
+              halfCycle: document.getElementById('halfCycle1').value,
+              edgeClass:'edge-top',
+              loop:true
+            })">
+        开始跳动
+      </button>
+      <button onclick="Bling.stopLoop($elements.jumpBlock)">停止跳动</button>
+      <button onclick="Bling({
+              el:$elements.jumpBlock,
+              halfCycle: document.getElementById('halfCycle1').value,
+              edgeClass:'edge-top',
+            })">
+        跳动一次
+      </button>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
