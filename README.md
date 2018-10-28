@@ -1,11 +1,12 @@
 ### 简介
 
-**bling.js** 是一个快速制作 **周期性** 动画的工具， 使用了 transition 查看[在线例子](https://stormpass.github.io/example/bling.js/)
+**bling.js** 是一个快速制作 **周期性** 动画的工具，体积**2.09KB** 使用了 transition 查看[在线例子](https://stormpass.github.io/example/bling.js/)
 
 
 ### 例子
 我的页面上有颗红心，我希望在我点击它的时候它放大了，在放大到最大后，它开始缩小，直到恢复原状。
 要达到这个效果，使用bling 就像下面这样简单
+
 
 ```HTML
 
@@ -23,7 +24,7 @@
 ```javascript
 
 Bling({
-  el: document.getElementById('heart'); // 添加动画到 dom 元素
+  el: document.getElementById('heart'), // 添加动画到 dom 元素
   edgeClass： 'jump-two-vh' // 周期动画中的边界效果 比如向上移动 2vh
 })
 
