@@ -40,3 +40,4 @@ loop | boolean | false |可选， 循环执行动画。
 animationProperty | string | all | 可选，同 transition-property
 animationFunction | string | ease-in-out |可选， 同 transition-timing-function
 animationDelay | number | 0 |可选， 单位 毫秒（ms）； 动画执行延迟时间
+times | number | 1 | 可选 动画执行次数

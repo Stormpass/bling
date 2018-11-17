@@ -35,7 +35,7 @@
     : bling._startAnimation(el,conf)
   }
   bling.stopLoop = function(el) {
-    clearInterval(el.dataset.blingtimer)
+    clearInterval(el.blingtimer)
     el.settedBling = false;
     el.classList.remove(el.dataset.edgeClass);
   }
@@ -45,10 +45,24 @@
   bling._startAnimation = function(el, config){
     el.settedBling = true;
     el.classList.add(el.dataset.edgeClass);
+    if(config.loop){
+      el.times = -1;
+    } else {
+      el.times = (config.times-1) * 2 || 0 ;
+    }
+    
+    el.blingtimer = setInterval(function() {
+      if(el.times === 0){
+        bling.stopLoop(el);
+        return
+      }
+      el.times > 0 && el.times--;
+      el.classList.toggle(el.dataset.edgeClass);
+    }, config.halfCycle + (config.animationDelay || 0));
+
+
     if (config.loop) {
-      el.dataset.blingtimer = setInterval(function() {
-        el.classList.toggle(el.dataset.edgeClass);
-      }, config.halfCycle + (config.animationDelay || 0));
+
     } else {
       setTimeout(function() {
         el.settedBling = false;
